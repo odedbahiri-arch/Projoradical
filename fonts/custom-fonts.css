@@ -1,0 +1,126 @@
+/* ========================================
+   PLONI FONT FAMILY - ALL WEIGHTS
+   ======================================== */
+
+/* Ploni - Ultralight (200) */
+@font-face {
+  font-family: 'Ploni';
+  src: url('Ploni-Ultralight-AAA.woff2') format('woff2');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Ploni - Regular (400) */
+@font-face {
+  font-family: 'Ploni';
+  src: url('Ploni-Regular-AAA.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Ploni - Medium (500) */
+@font-face {
+  font-family: 'Ploni';
+  src: url('Ploni-Medium-AAA.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Ploni - Demibold (600) */
+@font-face {
+  font-family: 'Ploni';
+  src: url('Ploni-Demibold-AAA.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Ploni - Bold (700) */
+@font-face {
+  font-family: 'Ploni';
+  src: url('Ploni-Bold-AAA.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+/* ========================================
+   APPLY PLONI TO SITE ELEMENTS
+   ======================================== */
+
+/* Main "PROJO" Heading - Ploni Bold */
+.hero_heading {
+  font-family: 'Ploni', sans-serif !important;
+  font-weight: 700 !important; /* Bold */
+}
+
+/* Loader Animation "Let's Projo" - Ploni Bold */
+.main-heading {
+  font-family: 'Ploni', sans-serif !important;
+  font-weight: 700 !important; /* Bold */
+}
+
+/* Large Display Headings - Ploni Bold */
+.display-heading-1 {
+  font-family: 'Ploni', sans-serif !important;
+  font-weight: 700 !important; /* Bold */
+}
+
+/* Secondary Headings - Ploni Demibold */
+.display-heading-3,
+.display-heading-4 {
+  font-family: 'Ploni', sans-serif !important;
+  font-weight: 600 !important; /* Demibold */
+}
+
+/* H2 Headings - Ploni Demibold */
+.heading-h2 {
+  font-family: 'Ploni', sans-serif !important;
+  font-weight: 600 !important; /* Demibold */
+}
+
+/* H3 Headings - Ploni Medium */
+.heading-h3 {
+  font-family: 'Ploni', sans-serif !important;
+  font-weight: 500 !important; /* Medium */
+}
+
+/* H4 Headings - Ploni Medium */
+.heading-h4 {
+  font-family: 'Ploni', sans-serif !important;
+  font-weight: 500 !important; /* Medium */
+}
+
+/* Body Text - Ploni Regular */
+.paragraph-16,
+.paragraph-18,
+.paragraph-20,
+.paragraph-14 {
+  font-family: 'Ploni', sans-serif !important;
+  font-weight: 400 !important; /* Regular */
+}
+
+
+/* ========================================
+   FONT WEIGHT REFERENCE
+   ========================================
+   
+   Use these values to control font weight:
+   
+   font-weight: 200;  → Ploni Ultralight
+   font-weight: 400;  → Ploni Regular
+   font-weight: 500;  → Ploni Medium
+   font-weight: 600;  → Ploni Demibold
+   font-weight: 700;  → Ploni Bold
+   
+   Example:
+   .my-element {
+     font-family: 'Ploni', sans-serif;
+     font-weight: 700; /* This will use Ploni Bold */
+   }
+   
+======================================== */
