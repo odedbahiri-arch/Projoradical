@@ -31,39 +31,27 @@
 		display: flex;
 }
 
-/* Organic Mist Cloud Effect */
-@keyframes mistGlow {
+/* Integrated Text Glow Effect - Part of the text itself */
+@keyframes textGlow {
   0%, 100% {
     text-shadow: 
-                 /* Soft white/gold mist clouds at different positions */
-                 -10px 5px 20px rgba(255, 250, 220, 0.4),
-                 10px -5px 25px rgba(255, 240, 200, 0.35),
-                 -15px -10px 30px rgba(255, 255, 240, 0.3),
-                 15px 10px 35px rgba(255, 245, 210, 0.25),
-                 0 -15px 40px rgba(255, 250, 230, 0.2),
-                 0 15px 45px rgba(255, 240, 200, 0.15),
-                 /* Subtle gold core */
-                 0 0 15px rgba(255, 220, 120, 0.3),
-                 0 0 8px rgba(255, 235, 180, 0.5);
+                 0 0 10px rgba(255, 215, 0, 0.6),
+                 0 0 20px rgba(255, 215, 0, 0.4),
+                 0 0 30px rgba(255, 215, 0, 0.2);
+    color: rgba(255, 255, 255, 0.9);
   }
   50% {
     text-shadow: 
-                 /* Brighter, expanded mist clouds */
-                 -15px 8px 30px rgba(255, 250, 220, 0.6),
-                 15px -8px 35px rgba(255, 240, 200, 0.55),
-                 -20px -15px 40px rgba(255, 255, 240, 0.5),
-                 20px 15px 45px rgba(255, 245, 210, 0.45),
-                 0 -20px 50px rgba(255, 250, 230, 0.4),
-                 0 20px 55px rgba(255, 240, 200, 0.35),
-                 /* Brighter gold core */
-                 0 0 20px rgba(255, 220, 120, 0.6),
-                 0 0 12px rgba(255, 235, 180, 0.8),
-                 0 0 5px rgba(255, 250, 240, 0.9);
+                 0 0 15px rgba(255, 215, 0, 0.9),
+                 0 0 25px rgba(255, 215, 0, 0.7),
+                 0 0 35px rgba(255, 215, 0, 0.5),
+                 0 0 45px rgba(255, 215, 0, 0.3);
+    color: rgba(255, 255, 255, 1);
   }
 }
 
 .hero-glow-effect {
-  animation: mistGlow 3s ease-in-out infinite;
+  animation: textGlow 3s ease-in-out infinite;
 }
 
 /* Remove any backgrounds from text elements */
@@ -94,7 +82,7 @@
       <p class="main-heading">Let's</p>
     </div>
     <div class="loader_column is-3">
-      <p class="main-heading">Projo</p>
+      <p class="main-heading" style="color: #FFD700;">Projo</p>
     </div>
     <div class="loader_column is-4"></div>
   </div>
@@ -148,19 +136,24 @@
            Use this area for: CTAs, bottom content
            ============================================ -->
       <div class="hero_bottom-text-wrapper">
-        <div class="hero_sub-heading-container">
+        <div class="hero_sub-heading-container" style="position: relative;">
           
           <!-- ============================================
                [REF-H] BOTTOM LEFT TEXT AREA
                ============================================ -->
           <div class="hero-text">
-            <p class="paragraph-16 txt-white hero-glow-effect">Scroll to explore</p>
+            <p class="paragraph-16 txt-white">Scroll to explore</p>
           </div>
+          
+          <!-- ============================================
+               MIDDLE TEXT AREA - CENTERED (Absolutely positioned)
+               ============================================ -->
+          <p class="paragraph-16 txt-white" dir="rtl" style="text-align: center; position: absolute; left: 50%; transform: translateX(-50%); margin: 0; padding: 0; white-space: nowrap; font-size: 1.5rem;">שינוי תפיסה דרך משחק</p>
           
           <!-- ============================================
                [REF-I] BOTTOM RIGHT TEXT AREA
                ============================================ -->
-          <p class="paragraph-16 txt-white hero-glow-effect" dir="rtl" style="text-align: right;">גִּלְלוּ למטה</p>
+          <p class="paragraph-16 txt-white" dir="rtl" style="text-align: right;">גללו למטה</p>
           
         </div>
       </div>
@@ -179,7 +172,7 @@
         <div class="ai-img_white-shadow"></div>
         <h2 ai-img="1" class="heading-h2" dir="rtl" style="text-align: right;">דמיינו מקום<br><span style="display: block; text-align: center;">שבו</span></h2>
         <h2 ai-img="2" class="heading-h2 position-absolute" dir="rtl" style="text-align: center;">אתם יכולים לעשות טעויות עסקיות,</h2>
-        <h2 ai-img="3" class="heading-h3 position-absolute" dir="rtl" style="text-align: center;">ועדיין לצאת ברווח.</h2>
+        <h2 ai-img="3" class="heading-h2 position-absolute" dir="rtl" style="text-align: center;">ועדיין לצאת ברווח.</h2>
         <h2 ai-img="4" class="heading-h3 position-absolute" dir="rtl" style="text-align: center;">פרוג'ו הוא "מגרש משחקים" חכם המשתמש במשחק לוח של השקעות נדל"ן ככלי.</h2>
       </div>
     </div>
@@ -187,111 +180,57 @@
       <div class="ai-img_artwork-wrapper">
         <div class="ai-img_artwork-inner-wrapper">
           <div class="row-1">
-            <div class="ai-image-wrapper"><img src="images/family_1family.avif" loading="lazy" sizes="(max-width: 767px) 100vw, 768px" srcset="images/family_1family.avif 500w, images/family_1family.avif 768w" alt="" class="ai-image">
-              <div class="ai-img_desc-wrapper">
-                <p class="ai-img_desc"><strong>Prompt:</strong> painting of Twelfth Night in pastel summer colors of Viola as Cesario with Olivia by artist Henri Matisse</p>
-              </div>
+            <div class="ai-image-wrapper"><img src="new-images/peopleplayingprojoAI.jpg" loading="lazy" alt="" class="ai-image">
             </div>
-            <div class="ai-image-wrapper"><img src="images/3_13.avif" loading="lazy" alt="" class="ai-image">
-              <div class="ai-img_desc-wrapper">
-                <p class="ai-img_desc"><strong>Prompt:</strong> The Risograph print depicts a cute pink and blue stag standing on the ground with its head raised, using a striking illustration style</p>
-              </div>
+            <div class="ai-image-wrapper"><img src="new-images/board_games_ii__by_portelil_dkxqs9f-300w-2x.jpg" loading="lazy" alt="" class="ai-image">
             </div>
           </div>
           <div class="row-2">
-            <div class="ai-image-wrapper"><img src="images/8_18.avif" loading="lazy" alt="" class="ai-image">
-              <div class="ai-img_desc-wrapper">
-                <p class="ai-img_desc"><strong>Prompt:</strong> faux illuminated prayer: a rat holding a spoon with golden halo, banner says ‘O Holy Cheese’ - symmetrical sacred layout</p>
-              </div>
+            <div class="ai-image-wrapper"><img src="new-images/dice_pixel_art_by_sigmaazar_dkw7x4n-414w-2x.jpg" loading="lazy" alt="" class="ai-image">
             </div>
-            <div class="ai-image-wrapper"><img src="images/gentleman_1gentleman.avif" loading="lazy" alt="" class="ai-image">
-              <div class="ai-img_desc-wrapper">
-                <p class="ai-img_desc"><strong>Prompt:</strong> T-SHIRT DESIGN. An upper class gentleman eating pineapple slices</p>
-              </div>
+            <div class="ai-image-wrapper"><img src="new-images/real_estate_success_made_simple_by_propertiesdekhoess_dj0ti8m-350t-2x.jpg" loading="lazy" alt="" class="ai-image">
             </div>
           </div>
           <div class="row-1">
-            <div class="ai-image-wrapper"><img src="images/lobster_1lobster.avif" loading="lazy" alt="" class="ai-image">
-              <div class="ai-img_desc-wrapper">
-                <p class="ai-img_desc"><strong>Prompt:</strong> Hello cartoon, a funny lobster sits in a chef&#x27;s hat, in the background is the sea and the beach</p>
-              </div>
+            <div class="ai-image-wrapper"><img src="new-images/the_real_estate_agent__charlotte_hayes_by_furfile_dkg1zki-250t-2x.jpg" loading="lazy" alt="" class="ai-image">
             </div>
-            <div class="ai-image-wrapper"><img src="images/9999_19999.avif" loading="lazy" alt="" class="ai-image">
-              <div class="ai-img_desc-wrapper">
-                <p class="ai-img_desc"><strong>Prompt:</strong> Cel-shaded 2D anime style, gritty photoreal urban background, shallow depth of field: a fashionable man in designer streetwear</p>
-              </div>
+            <div class="ai-image-wrapper"><img src="new-images/2dc7a3d2-d204-4045-b875-ce220714658c.png" loading="lazy" alt="" class="ai-image">
             </div>
           </div>
           <div class="row-2">
-            <div class="ai-image-wrapper"><img src="images/kitchen_1kitchen.avif" loading="lazy" alt="" class="ai-image">
-              <div class="ai-img_desc-wrapper">
-                <p class="ai-img_desc"><strong>Prompt:</strong> A highly detailed and delicate line-art illustration of a sunlit coastal kitchen in a seaside Mediterranean-style home. The kitchen is filled with vibrant potted plants and flowers, especially hanging vines and blooming blossoms.</p>
-              </div>
+            <div class="ai-image-wrapper"><img src="new-images/draw_with_intricate_math__mass__time__truth__space_by_dimuzart_dkxo1lx-375w-2x.jpg" loading="lazy" alt="" class="ai-image">
             </div>
-            <div class="ai-image-wrapper"><img src="images/6_16.avif" loading="lazy" alt="" class="ai-image">
-              <div class="ai-img_desc-wrapper">
-                <p class="ai-img_desc"><strong>Prompt:</strong> two lemons colliding mid-air with a burst of juice and ice shards flying around them, soft pale yellow background, ultra-detailed textures, dramatic splash effects</p>
-              </div>
+            <div class="ai-image-wrapper"><img src="new-images/0x0.webp" loading="lazy" alt="" class="ai-image">
             </div>
           </div>
           <div class="row-1">
-            <div class="ai-image-wrapper"><img src="images/99_199.avif" loading="lazy" alt="" class="ai-image">
-              <div class="ai-img_desc-wrapper">
-                <p class="ai-img_desc"><strong>Prompt:</strong> Stylish white hen in branded shades, pearls, red purse, cold cobalt sunrise cityscape, Soviet bus pulling in, side angle, premium 35 mm film</p>
-              </div>
+            <div class="ai-image-wrapper"><img src="new-images/1cc034be-bd04-4836-aeb4-96cc6943d592.png" loading="lazy" alt="" class="ai-image">
             </div>
-            <div class="ai-image-wrapper"><img src="images/999999_1999999.avif" loading="lazy" alt="" class="ai-image">
-              <div class="ai-img_desc-wrapper">
-                <p class="ai-img_desc"><strong>Prompt:</strong> Stylish white hen in branded shades, pearls, red purse, cold cobalt sunrise cityscape, Soviet bus pulling in, side angle, premium 35 mm film, fine grain, direct flash</p>
-              </div>
+            <div class="ai-image-wrapper"><img src="new-images/2a57678a-0dbf-4c01-88a6-26e1bacd1c62.png" loading="lazy" alt="" class="ai-image">
             </div>
           </div>
           <div class="row-2">
-            <div class="ai-image-wrapper"><img src="images/1_11.avif" loading="lazy" alt="" class="ai-image">
-              <div class="ai-img_desc-wrapper">
-                <p class="ai-img_desc"><strong>Prompt:</strong> Small Italian house on a winery, rustic painting</p>
-              </div>
+            <div class="ai-image-wrapper"><img src="new-images/money%20tree.jpg" loading="lazy" alt="" class="ai-image">
             </div>
-            <div class="ai-image-wrapper"><img src="images/5_15.avif" loading="lazy" alt="" class="ai-image">
-              <div class="ai-img_desc-wrapper">
-                <p class="ai-img_desc"><strong>Prompt:</strong> A Gameboy with a fish tank, made of translucent bubblegum pink plastic. Decorated with holographic and glittery Y2K-style stickers.</p>
-              </div>
+            <div class="ai-image-wrapper"><img src="new-images/37485ecb-098e-4a4a-9e8d-157efeb4b76d.png" loading="lazy" alt="" class="ai-image">
             </div>
           </div>
           <div class="row-1">
-            <div class="ai-image-wrapper"><img src="images/woman-portal_1woman-portal.avif" loading="lazy" alt="" class="ai-image">
-              <div class="ai-img_desc-wrapper">
-                <p class="ai-img_desc"><strong>Prompt:</strong> The future of the web, through the portal, old fasion</p>
-              </div>
+            <div class="ai-image-wrapper"><img src="new-images/92a786e9-a7f1-4355-b9bb-094781635e30.png" loading="lazy" alt="" class="ai-image">
             </div>
-            <div class="ai-image-wrapper"><img src="images/strawberries_1strawberries.avif" loading="lazy" alt="" class="ai-image">
-              <div class="ai-img_desc-wrapper">
-                <p class="ai-img_desc"><strong>Prompt:</strong> beautiful vintage big strawberry linocut floral pattern, detailed foliage, light pink and red, light cream background, detailed foliage, graceful flowers</p>
-              </div>
+            <div class="ai-image-wrapper"><img src="new-images/e15ac31f-655d-4416-80f8-3f5ed0b53d75.png" loading="lazy" alt="" class="ai-image">
             </div>
           </div>
           <div class="row-2">
-            <div class="ai-image-wrapper"><img src="images/family_1family.avif" loading="lazy" sizes="(max-width: 767px) 100vw, 768px" srcset="images/family_1family.avif 500w, images/family_1family.avif 768w" alt="" class="ai-image">
-              <div class="ai-img_desc-wrapper">
-                <p class="ai-img_desc"><strong>Prompt:</strong> Family enjoying retro picnic with futuristic twist.</p>
-              </div>
+            <div class="ai-image-wrapper"><img src="new-images/IMG_5775.JPG" loading="lazy" alt="" class="ai-image">
             </div>
-            <div class="ai-image-wrapper"><img src="images/cat_1cat.avif" loading="lazy" alt="" class="ai-image">
-              <div class="ai-img_desc-wrapper">
-                <p class="ai-img_desc"><strong>Prompt:</strong> A majestic black cat wearing a golden crown, seated on an ornate velvet throne, surrounded by lush tropical plants, elegant regal portrait style</p>
-              </div>
+            <div class="ai-image-wrapper"><img src="new-images/WhatsApp%20Image%202025-05-10%20at%2020_45_56.avif" loading="lazy" alt="" class="ai-image">
             </div>
           </div>
           <div class="row-1">
-            <div class="ai-image-wrapper"><img src="images/9_19.avif" loading="lazy" alt="" class="ai-image">
-              <div class="ai-img_desc-wrapper">
-                <p class="ai-img_desc"><strong>Prompt:</strong> Stylish white hen in branded shades, pearls, red purse, cold cobalt sunrise cityscape, Soviet bus pulling in, side angle, premium 35 mm film, fine grain, direct flash</p>
-              </div>
+            <div class="ai-image-wrapper"><img src="new-images/peopleplayingprojoAI.jpg" loading="lazy" alt="" class="ai-image">
             </div>
-            <div class="ai-image-wrapper"><img src="images/99999_199999.avif" loading="lazy" alt="" class="ai-image">
-              <div class="ai-img_desc-wrapper">
-                <p class="ai-img_desc"><strong>Prompt:</strong> Stylish white hen in branded shades, pearls, red purse, cold cobalt sunrise cityscape, Soviet bus pulling in, side angle, premium 35 mm film, fine grain, direct flash</p>
-              </div>
+            <div class="ai-image-wrapper"><img src="new-images/board_games_ii__by_portelil_dkxqs9f-300w-2x.jpg" loading="lazy" alt="" class="ai-image">
             </div>
           </div>
         </div>
@@ -380,13 +319,13 @@
       <div class="ai-desn_grid-background"></div>
       <div class="ai-desn_grid-color"></div>
       <div class="ai-agent_top-wrapper">
-        <h2 class="display-heading-1 txt-white txt-center">THE <span style="color: #FFD700;">4</span> PILLARS</h2>
-        <h2 class="display-heading-4 txt-white txt-center" dir="rtl">מה תגלו על הלוח?<br>(<span style="color: #FFD700;">4</span> חוזקות המשחק)</h2>
+        <h2 class="display-heading-1 txt-white txt-center" style="font-size: 5.5rem;">THE <span style="color: #FFD700;">4</span> PILLARS</h2>
+        <h2 class="display-heading-4 txt-white txt-center" dir="rtl" style="font-size: 3.5rem;">מה תגלו על הלוח?<br>(<span style="color: #FFD700;">4</span> חוזקות המשחק)</h2>
         <div id="ai-desn-input" class="agent-input-box agent-input-box--ai-desn">
-          <p id="ai-desn-input-text" class="paragraph-16 txt-white">Portal-tech website, monochrome collage, dotted details, dark themed</p>
-          <div id="ai-desn-input-icon-wrapper" class="agent_input-icon">
-            <div id="ai-desn-input-icon" class="icon-embed-xsmall w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 24 24" fill="none" preserveaspectratio="xMidYMid meet" aria-hidden="true" role="img">
-                <path d="M1.51 21L22.5 12L1.51 3L1.5 10L16.5 12L1.5 14L1.51 21Z" fill="currentColor"></path>
+          <p id="ai-desn-input-text" class="paragraph-16 txt-white" dir="rtl">מה חוסם ומניע אתכם? מי אתם צריכים להיות? (ועם מי) לפריצת דרך!</p>
+          <div id="ai-desn-input-icon-wrapper" class="agent_input-icon" style="order: -1; display: flex; align-items: center; justify-content: center; padding: 0;">
+            <div id="ai-desn-input-icon" class="icon-embed-xsmall w-embed" style="display: flex; align-items: center; justify-content: center; width: 100%; height: 100%;"><svg xmlns="http://www.w3.org/2000/svg" width="70%" height="70%" viewbox="0 0 24 24" fill="none" preserveaspectratio="xMidYMid meet" aria-hidden="true" role="img">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z" fill="currentColor"></path>
               </svg></div>
           </div>
         </div>
@@ -395,21 +334,21 @@
     <div class="w-layout-blockcontainer ai-desn-container w-container">
       <div data-w-id="2f7ece4d-dd57-6a58-0055-5820a64ca24f" class="ai-desn_hero">
         <div ai-desn-wrapper="1" data-wf-target="[[[&quot;69395a86e99a91e97fdae466&quot;,&quot;2f7ece4d-dd57-6a58-0055-5820a64ca250&quot;],[]]]" class="ai-desn-wrapper ai-desn-wrapper--1">
-          <div class="ai-desn_wrapper-img-1"><img src="images/woman-portal_1woman-portal.avif" loading="lazy" alt="" class="ai-desn_img-1"></div>
+          <div class="ai-desn_wrapper-img-1"><video src="new-images/reveal2.mp4" autoplay loop muted playsinline class="ai-desn_img-1" style="width: 100%; height: 100%; object-fit: cover;"></video></div>
           <div class="ai-desn_nav">
             <p class="paragraph-14 txt-white">PORTAL PASS</p>
             <p class="paragraph-14 txt-white">BOOK A TICKET</p>
           </div>
           <div class="ai-desn_wrapper-1">
             <div class="ai-desn__heading-wrapper-1">
-              <p class="ai-desn_title">Portal</p>
+              <p class="ai-desn_title" dir="rtl" style="font-family: 'Ploni', sans-serif; color: #E8E8E8; text-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(192, 192, 192, 0.3);">שיקוף דפוסים</p>
               <div class="ai-desn_second-line-wrapper">
-                <p class="ai-desn_title second-line">Fast Track</p>
-                <div class="ai-desn_tagline-wrapper">
-                  <p class="paragraph-14 txt-white">Jump visitors past the maze to the finish line.</p>
-                </div>
+                <p class="ai-desn_title second-line" dir="rtl" style="text-transform: none; font-size: 1.6rem; max-width: 350px; line-height: 1.4; font-family: 'Ploni', sans-serif;">המשחק חושף באכזריות אלגנטית את הדפוסים האוטומטים שלכם.</p>
               </div>
-              <p class="ai-desn_title">Ticket</p>
+              <p class="ai-desn_title" style="font-size: 1.5rem; font-family: 'Ploni', sans-serif;">Ticket</p>
+              <div class="ai-desn_tagline-wrapper">
+                <p class="paragraph-14 txt-white" style="font-family: 'Ploni', sans-serif;">Jump visitors past the maze to the finish line.</p>
+              </div>
             </div>
           </div>
           <div class="ai-desn_nav">

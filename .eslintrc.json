@@ -1,0 +1,44 @@
+{
+  "env": {
+    "browser": true,
+    "es2020": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 2020,
+    "sourceType": "script"
+  },
+  "extends": ["eslint:recommended"],
+  "globals": {
+    "jQuery": "readonly",
+    "$": "readonly",
+    "gsap": "readonly",
+    "ScrollTrigger": "readonly",
+    "SplitText": "readonly",
+    "Webflow": "readonly"
+  },
+  "rules": {
+    "no-console": "off",
+    "no-alert": "off",
+    "quotes": "off",
+    "semi": "off",
+    "comma-dangle": "off",
+    "indent": "off",
+    "no-unused-vars": [
+      "warn",
+      {
+        "argsIgnorePattern": "^_",
+        "varsIgnorePattern": "^_"
+      }
+    ],
+    "eqeqeq": "off",
+    "no-undef": "error"
+  },
+  "overrides": [
+    {
+      "files": ["*.js"],
+      "rules": {}
+    }
+  ],
+  "ignorePatterns": ["index.html", "*.min.js", "webflow.js"]
+}
+

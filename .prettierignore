@@ -1,0 +1,21 @@
+# Webflow exported CSS - don't reformat
+css/odeds-dynamite-site-4daf96.webflow.css
+css/webflow.css
+css/normalize.css
+
+# Vendor scripts
+js/webflow.js
+*.min.js
+
+# Generated files
+*.woff2
+*.avif
+*.jpg
+*.png
+*.svg
+*.mp4
+*.MOV
+
+# Dependencies
+node_modules/
+
