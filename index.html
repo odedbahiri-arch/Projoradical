@@ -102,6 +102,19 @@
   margin-top: 2rem;
 }
 
+/* Shiny red style for both regen buttons */
+[regen="1"],
+[regen="2"] {
+  background-color: #ff5f6c; /* warm, not-flat red */
+  box-shadow: 0 4px 18px rgba(255, 95, 108, 0.55), 0 0 18px rgba(255, 160, 170, 0.65);
+}
+
+[regen="1"]:hover,
+[regen="2"]:hover {
+  background-color: #ff7480;
+  box-shadow: 0 6px 22px rgba(255, 95, 108, 0.75), 0 0 26px rgba(255, 200, 210, 0.85);
+}
+
 /* Fine-tune second regen button with Hebrew label */
 [regen="2"] {
   font-size: 0.8rem;
@@ -429,7 +442,7 @@
           <p class="ai-design_button-credits">Out of Credits</p>
         </div>
         <div regen="2" class="btn-primary btn-primary--second">
-          <p class="btn-primary--text">אבל היה כתוב לא ללחוץ!<br>סתם... כולם לוחצים<br>וזה בדיוק דפוס</p>
+          <p class="btn-primary--text">אבל היה כתוב לא ללחוץ!<br>סתם... כולם לוחצים.<br>וזה בדיוק דפוס</p>
           <p class="ai-design_button-credits">Out of Credits</p>
         </div>
       </div>
