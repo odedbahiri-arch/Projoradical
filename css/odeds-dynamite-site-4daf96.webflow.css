@@ -2287,6 +2287,11 @@ figure {
 }
 
 .black-section-fade.black-section-fade--ai-imgs {
+  /* Flatten the gradient so there is no extra white/gray flash at the end
+     of the AI media section. We keep a solid black so it blends into the
+     next section's black background. */
+  background-image: none;
+  background-color: #000;
   z-index: 5;
   pointer-events: none;
 }

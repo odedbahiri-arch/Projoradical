@@ -319,8 +319,9 @@
       <div class="ai-desn_grid-background"></div>
       <div class="ai-desn_grid-color"></div>
       <div class="ai-agent_top-wrapper">
-        <h2 class="display-heading-1 txt-white txt-center" style="font-size: 5.5rem;">THE <span style="color: #FFD700;">4</span> PILLARS</h2>
-        <h2 class="display-heading-4 txt-white txt-center" dir="rtl" style="font-size: 3.5rem;">מה תגלו על הלוח?<br>(<span style="color: #FFD700;">4</span> חוזקות המשחק)</h2>
+        <h2 class="display-heading-1 txt-white txt-center" style="font-size: 4rem; color: #FFFFFF;">THE <span style="color: #FFD700;">4</span> PILLARS</h2>
+        <h3 class="display-heading-4 txt-white txt-center" dir="rtl" style="font-size: 2.6rem; color: #FFFFFF;">מה תגלו על הלוח?</h3>
+        <p class="txt-white txt-center" dir="rtl" style="font-size: 1.8rem; color: rgba(255,255,255,0.8); margin-top: 0.5rem; font-family: 'Ploni', sans-serif; font-weight: 400;">(<span style="color: #FFD700;">4</span> חוזקות המשחק)</p>
         <div id="ai-desn-input" class="agent-input-box agent-input-box--ai-desn">
           <p id="ai-desn-input-text" class="paragraph-16 txt-white" dir="rtl">מה חוסם ומניע אתכם? מי אתם צריכים להיות? (ועם מי) לפריצת דרך!</p>
           <div id="ai-desn-input-icon-wrapper" class="agent_input-icon" style="order: -1; display: flex; align-items: center; justify-content: center; padding: 0;">
@@ -343,7 +344,7 @@
             <div class="ai-desn__heading-wrapper-1">
               <p class="ai-desn_title" dir="rtl" style="font-family: 'Ploni', sans-serif; color: #E8E8E8; text-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(192, 192, 192, 0.3);">שיקוף דפוסים</p>
               <div class="ai-desn_second-line-wrapper">
-                <p class="ai-desn_title second-line" dir="rtl" style="text-transform: none; font-size: 1.6rem; max-width: 350px; line-height: 1.4; font-family: 'Ploni', sans-serif;">המשחק חושף באכזריות אלגנטית את הדפוסים האוטומטים שלכם.</p>
+                <p class="ai-desn_title second-line" dir="rtl" style="text-transform: none; font-size: 1.6rem; max-width: 350px; line-height: 1.4; font-family: 'Ploni', sans-serif; font-weight: 600; color: white;">המשחק חושף באכזריות אלגנטית את הדפוסים האוטומטים שלכם.</p>
               </div>
               <p class="ai-desn_title" style="font-size: 1.5rem; font-family: 'Ploni', sans-serif;">Ticket</p>
               <div class="ai-desn_tagline-wrapper">
@@ -660,6 +661,8 @@
   <script src="https://cdn.prod.website-files.com/gsap/3.13.0/ScrollTrigger.min.js" type="text/javascript"></script>
   <script>
 /* ---------- 1. helpers ---------- */
+gsap.registerPlugin(ScrollTrigger);
+
 function makeMapper(pxRange) {
   // Factory that returns {mapX, mapY} for a given ±pixel range
   const mapX = gsap.utils.mapRange(0, innerWidth,   pxRange, -pxRange);
@@ -685,6 +688,63 @@ addEventListener("pointermove", ({ clientX, clientY }) => {
 addEventListener("resize", () => {
   mkArt   = makeMapper(innerWidth * 0.05);    // 5 vw
   mkBlank = makeMapper(innerWidth * 0.025);   // 2.5 vw
+});
+
+/* ---------- 5. AI images background + mist scroll fade (to black) ---------- */
+const aiBgTl = gsap.timeline({
+  scrollTrigger: {
+    trigger: "#ai-media",
+    start: "top center",
+    // Finish the fade earlier so it is fully black by the mid-text section
+    end: "center center",
+    scrub: true
+  }
+});
+
+// Single stage: existing light gray → full black
+aiBgTl.to("#ai-media", {
+  backgroundColor: "#000000", // fade section background to black
+  duration: 1
+}, 0);
+
+// Keep the central mist visible as a soft gray glow on top of black
+aiBgTl.to(".ai-img_white-shadow", {
+  backgroundColor: "#4c4d50", // medium gray glow
+  opacity: 0.7,
+  duration: 1
+}, 0);
+
+/* ---------- 6. AI images floating tiles color fade (3 stages) ---------- */
+const tilesTl = gsap.timeline({
+  scrollTrigger: {
+    trigger: "#ai-media",
+    start: "top center",
+    end: "center center",
+    scrub: true
+  }
+});
+
+// Stage 1 → 2: light gray → mid gray
+tilesTl.to(".blank-wrapper", {
+  backgroundColor: "#808386", // slightly lighter gray
+  duration: 0.33
+}, 0);
+
+// Stage 2 → 3: mid gray → dark gray (almost black)
+tilesTl.to(".blank-wrapper", {
+  backgroundColor: "#1a1b1d", // dark like the second reference
+  duration: 0.67
+}, 0.33);
+
+/* ---------- 7. AI images text color fade (dark → white) ---------- */
+gsap.to('[ai-img="1"], [ai-img="2"], [ai-img="3"], [ai-img="4"]', {
+  color: "#ffffff",
+  scrollTrigger: {
+    trigger: "#ai-media",
+    start: "top center",
+    end: "center center",
+    scrub: true
+  }
 });
 </script>
 </body>
