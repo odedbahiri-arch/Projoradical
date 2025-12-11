@@ -63,6 +63,64 @@
   background: none !important;
   background-color: transparent !important;
 }
+
+/* Circular badge styling for the \"1\" in AI designer nav */
+.ai-desn_nav-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.6rem;
+  height: 2.6rem;
+  border-radius: 50%;
+  background-color: #ffffff;
+  color: #FFC900;
+  font-size: 2rem;
+  line-height: 1;
+  font-family: 'Ploni', sans-serif;
+  font-weight: 800;
+  margin: 0.5rem 0.75rem 0 0;
+}
+
+.ai-desn_rect-video-wrapper {
+  width: 100%;
+  max-width: 32rem;
+  margin: 0 auto;
+  padding: 1.25rem 1.5rem 1.75rem;
+  box-sizing: border-box;
+}
+
+.ai-desn_rect-video {
+  width: 100%;
+  max-height: 18rem;
+  border-radius: 1.5rem;
+  object-fit: cover;
+  display: block;
+}
+
+/* Keep regen buttons at a consistent distance below the card */
+.ai-desn_btn-wrapper {
+  margin-top: 2rem;
+}
+
+/* Fine-tune second regen button with Hebrew label */
+[regen="2"] {
+  font-size: 0.8rem;
+  padding: 0.6rem 1.6rem;
+  min-width: 7.5rem;
+}
+
+[regen="2"] .ai-design_button-credits {
+  display: none;
+}
+
+/* Hebrew button typography (both states) */
+[regen="1"] .btn-primary--text,
+[regen="2"] .btn-primary--text {
+  font-family: 'Ploni', sans-serif;
+  direction: rtl;
+  text-align: center;
+  white-space: nowrap;
+}
 </style>
 </head>
 <body>
@@ -173,7 +231,10 @@
         <h2 ai-img="1" class="heading-h2" dir="rtl" style="text-align: right;">דמיינו מקום<br><span style="display: block; text-align: center;">שבו</span></h2>
         <h2 ai-img="2" class="heading-h2 position-absolute" dir="rtl" style="text-align: center;">אתם יכולים לעשות טעויות עסקיות,</h2>
         <h2 ai-img="3" class="heading-h2 position-absolute" dir="rtl" style="text-align: center;">ועדיין לצאת ברווח.</h2>
-        <h2 ai-img="4" class="heading-h3 position-absolute" dir="rtl" style="text-align: center;">פרוג'ו הוא "מגרש משחקים" חכם המשתמש במשחק לוח של השקעות נדל"ן ככלי.</h2>
+        <h2 ai-img="4" class="heading-h3 position-absolute" dir="rtl" style="text-align: center;">
+          <span style="font-size: 1.25em; font-weight: 600; letter-spacing: 0.03em;">מה זה <span style="color: #FFD700;">פרוג'ו</span>?</span><br>
+          <span style="font-size: 0.8em; color: rgba(255, 255, 255, 0.9);">פרוג'ו הוא "מגרש משחקים" חכם המשתמש במשחק קופסה להשקעות ככלי.</span>
+        </h2>
       </div>
     </div>
     <div class="ai-img_art-blank-wrapper">
@@ -336,9 +397,8 @@
       <div data-w-id="2f7ece4d-dd57-6a58-0055-5820a64ca24f" class="ai-desn_hero">
         <div ai-desn-wrapper="1" data-wf-target="[[[&quot;69395a86e99a91e97fdae466&quot;,&quot;2f7ece4d-dd57-6a58-0055-5820a64ca250&quot;],[]]]" class="ai-desn-wrapper ai-desn-wrapper--1">
           <div class="ai-desn_wrapper-img-1"><video src="new-images/reveal2.mp4" autoplay loop muted playsinline class="ai-desn_img-1" style="width: 100%; height: 100%; object-fit: cover;"></video></div>
-          <div class="ai-desn_nav">
-            <p class="paragraph-14 txt-white">PORTAL PASS</p>
-            <p class="paragraph-14 txt-white">BOOK A TICKET</p>
+          <div class="ai-desn_nav" style="flex-direction: row-reverse;">
+            <p class="paragraph-14 txt-white ai-desn_nav-number">1</p>
           </div>
           <div class="ai-desn_wrapper-1">
             <div class="ai-desn__heading-wrapper-1">
@@ -346,64 +406,30 @@
               <div class="ai-desn_second-line-wrapper">
                 <p class="ai-desn_title second-line" dir="rtl" style="text-transform: none; font-size: 1.6rem; max-width: 350px; line-height: 1.4; font-family: 'Ploni', sans-serif; font-weight: 600; color: white;">המשחק חושף באכזריות אלגנטית את הדפוסים האוטומטים שלכם.</p>
               </div>
-              <p class="ai-desn_title" style="font-size: 1.5rem; font-family: 'Ploni', sans-serif;">Ticket</p>
-              <div class="ai-desn_tagline-wrapper">
-                <p class="paragraph-14 txt-white" style="font-family: 'Ploni', sans-serif;">Jump visitors past the maze to the finish line.</p>
+              <p class="ai-desn_title" style="font-size: 1.5rem; font-family: 'Ploni', sans-serif;">The Mirror Effect</p>
+              <div class="ai-desn_tagline-wrapper" style="max-width: 100%;">
+                <p class="paragraph-14 txt-white" style="font-family: 'Ploni', sans-serif; font-size: 0.8rem; line-height: 1.3; text-align: center;" dir="rtl" lang="he" aria-label="קופצים על כל הצעה בלי לבדוק? איך אתם מגיבים להפסד? מהססים מול הזדמנויות?">קופצים על כל הצעה בלי לבדוק?<br>איך אתם מגיבים להפסד?<br>מהססים מול הזדמנויות?</p>
               </div>
             </div>
-          </div>
-          <div class="ai-desn_nav">
-            <p class="paragraph-14 txt-white">SEE THE FUTURE</p>
           </div>
         </div>
         <div ai-desn-wrapper="2" class="ai-desn-wrapper ai-desn-wrapper--2">
-          <div class="ai-desn_nav">
-            <p class="paragraph-14 txt-white">PORTAL PASS</p>
-            <p class="paragraph-14 txt-white">BOOK A TICKET</p>
+          <div class="ai-desn_nav" style="flex-direction: row-reverse;">
+            <p class="paragraph-14 txt-white" style="color: #FFD700;">1</p>
           </div>
-          <div class="ai-desn_wrapper-2">
-            <div class="ai-desn_top-wrapper-2">
-              <p class="ai-desn_title ai-desn_title--2">Portal</p>
-            </div>
-            <div class="ai-desn_middle-wrapper-2">
-              <p class="paragraph-14 txt-white">Jump visitors past</p>
-              <div class="ai-desn_wrapper-img-2"><img src="images/AI-Design-Portal-Collage_1AI-Design-Portal-Collage.avif" loading="lazy" sizes="100vw" srcset="images/AI-Design-Portal-Collage_1AI-Design-Portal-Collage.avif 500w, images/AI-Design-Portal-Collage_1AI-Design-Portal-Collage.avif 1104w" alt="" class="ai-desn_img-2"></div>
-              <p class="paragraph-14 txt-white">to the finish line.</p>
-            </div>
-            <div class="ai-desn_bottom-wrapper-2">
-              <p class="ai-desn_title ai-desn_title--2">Ticket</p>
-            </div>
+          <div class="ai-desn_rect-video-wrapper">
+            <video src="new-images/reveal2.mp4" autoplay loop muted playsinline class="ai-desn_rect-video"></video>
           </div>
         </div>
-        <div ai-desn-wrapper="3" class="ai-desn-wrapper ai-desn-wrapper--3">
-          <div class="ai-desn_nav">
-            <p class="paragraph-14 txt-white">PORTAL PASS</p>
-            <p class="paragraph-14 txt-white">BOOK A TICKET</p>
-          </div>
-          <div class="ai-desn_wrapper-3">
-            <div class="ai-desn_bottom-wrapper-3 align-top">
-              <p class="ai-desn_title ai-desn_title--3">Portal</p>
-              <div class="ai-desn_max-width-13rem">
-                <p class="paragraph-14 txt-white">Jump visitors past the maze to the finish line.</p>
-              </div>
-            </div>
-            <div class="ai-desn_bottom-wrapper-3">
-              <div class="ai-desn_btn">
-                <p>Book a ticket</p>
-              </div>
-              <p class="ai-desn_title ai-desn_title--3">Ticket</p>
-            </div>
-          </div>
-          <div class="ai-desn_img-3"><img src="images/AI-designer---portal_1AI-designer---portal.avif" loading="lazy" sizes="100vw" srcset="images/AI-designer---portal_1AI-designer---portal.avif 500w, images/AI-designer---portal_1AI-designer---portal.avif 800w, images/AI-designer---portal_1AI-designer---portal.avif 1080w, images/AI-designer---portal_1AI-designer---portal.avif 1998w" alt=""></div>
-        </div>
+        <div ai-desn-wrapper="3" class="ai-desn-wrapper ai-desn-wrapper--3" style="display: none;"></div>
       </div>
       <div class="ai-desn_btn-wrapper">
         <div regen="1" class="btn-primary">
-          <p class="btn-primary--text">Regenerate</p>
+          <p class="btn-primary--text">לא ללחוץ!</p>
           <p class="ai-design_button-credits">Out of Credits</p>
         </div>
         <div regen="2" class="btn-primary btn-primary--second">
-          <p class="btn-primary--text">Regenerate</p>
+          <p class="btn-primary--text">אבל היה כתוב לא ללחוץ!<br>סתם... כולם לוחצים<br>וזה בדיוק דפוס</p>
           <p class="ai-design_button-credits">Out of Credits</p>
         </div>
       </div>
@@ -745,6 +771,121 @@ gsap.to('[ai-img="1"], [ai-img="2"], [ai-img="3"], [ai-img="4"]', {
     end: "center center",
     scrub: true
   }
+});
+
+/* ---------- 8. Custom two-state logic for AI designer pillar 1 ---------- */
+$(document).ready(function () {
+  var $wrapper1 = $('[ai-desn-wrapper="1"]');
+  var $wrapper2 = $('[ai-desn-wrapper="2"]');
+  var $wrapper3 = $('[ai-desn-wrapper="3"]');
+  var $btn1 = $('[regen="1"]');
+  var $btn2 = $('[regen="2"]');
+
+  // Ensure only the first state (text) is visible on load, with smooth-ready values.
+  gsap.set($wrapper1, { autoAlpha: 1, pointerEvents: "auto" });
+  gsap.set($wrapper2, { autoAlpha: 0, pointerEvents: "none", display: "flex" });
+  $wrapper3.hide();
+  $btn2.hide();
+
+  var isVideoState = false;
+
+  function switchToVideo() {
+    if (isVideoState) return;
+    isVideoState = true;
+
+    gsap.set($wrapper1, { pointerEvents: "none" });
+    gsap.set($wrapper2, { pointerEvents: "auto" });
+
+    var tl = gsap.timeline();
+    tl.to($wrapper1, {
+      duration: 0.6,
+      autoAlpha: 0,
+      y: 20,
+      ease: "power2.inOut"
+    }).fromTo(
+      $wrapper2,
+      { autoAlpha: 0, y: -20 },
+      {
+        duration: 0.6,
+        autoAlpha: 1,
+        y: 0,
+        ease: "power2.inOut"
+      },
+      0
+    );
+
+    gsap.to($btn1, {
+      duration: 0.4,
+      autoAlpha: 0,
+      ease: "power2.out",
+      onComplete: function () {
+        $btn1.hide();
+        $btn2.css("opacity", 0).show();
+        gsap.to($btn2, {
+          duration: 0.4,
+          autoAlpha: 1,
+          ease: "power2.out"
+        });
+      }
+    });
+  }
+
+  function switchToText() {
+    if (!isVideoState) return;
+    isVideoState = false;
+
+    gsap.set($wrapper2, { pointerEvents: "none" });
+    gsap.set($wrapper1, { pointerEvents: "auto" });
+
+    var tl = gsap.timeline();
+    tl.to($wrapper2, {
+      duration: 0.6,
+      autoAlpha: 0,
+      y: 20,
+      ease: "power2.inOut"
+    }).fromTo(
+      $wrapper1,
+      { autoAlpha: 0, y: -20 },
+      {
+        duration: 0.6,
+        autoAlpha: 1,
+        y: 0,
+        ease: "power2.inOut"
+      },
+      0
+    );
+
+    gsap.to($btn2, {
+      duration: 0.4,
+      autoAlpha: 0,
+      ease: "power2.out",
+      onComplete: function () {
+        $btn2.hide();
+        $btn1.css("opacity", 0).show();
+        gsap.to($btn1, {
+          duration: 0.4,
+          autoAlpha: 1,
+          ease: "power2.out"
+        });
+      }
+    });
+  }
+
+  // First button: go from text → video.
+  $btn1.on("click.customPillar", function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+    e.stopImmediatePropagation();
+    switchToVideo();
+  });
+
+  // Second button: go from video → text.
+  $btn2.on("click.customPillar", function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+    e.stopImmediatePropagation();
+    switchToText();
+  });
 });
 </script>
 </body>
