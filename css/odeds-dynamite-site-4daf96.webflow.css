@@ -1895,6 +1895,11 @@ figure {
   margin-right: auto;
 }
 
+/* Ensure the header row centers the card properly */
+.listen_intro-header-row {
+  text-align: center;
+}
+
 .listen_sliding-glass-wrapper {
   grid-column-gap: 8vw;
   grid-row-gap: 8vw;
